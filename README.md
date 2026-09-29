@@ -2,7 +2,7 @@
 ## Devlogs
 ### W1
 Write your W1 activity Devlog here.
-
+When its no longer the child of a cat the camera doesn't follow the cat correclty. Meaning it no longer moves with the cat since the cat parent was carring the child camera. 
 ### W2
 Create future Devlog sub-headers with the three # symbols, then write your Devlogs below them.
 
