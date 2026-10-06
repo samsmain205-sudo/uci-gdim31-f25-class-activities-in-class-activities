@@ -6,7 +6,13 @@ When its no longer the child of a cat the camera doesn't follow the cat correclt
 
 Link: https://sam205.itch.io/wiinclass
 ### W2
-Create future Devlog sub-headers with the three # symbols, then write your Devlogs below them.
+R, G, B variables are floats since colors need a more precise in number values for more detailed colors. An int would make the colors less detailed and the decimals play a key role, while strings are used for sentences, and booleans only needed for T or F. 
+
+Bounces are integers since we only need whole numbers to count each bounce. It's not a float since there can't be "half a bounce" and counting bounces aren't strings. Furthermore, we're not testing to see if the ball bounced was T or F but rather how many times it bounced.
+
+The code didn't finish with a semicolon.
+
+
 
 ## Open-Source Assets
 ### W1
