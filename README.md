@@ -21,6 +21,9 @@ Our time visualized everything as if we were building a surfboard. Our classes a
 
 I believe the color is changing rapidly because of the collision method. In which everytime it's hitting something it increases the RGB until it eventually turns super-saiyan!
 
+### W4
+1. We determined that both the cat and ball need a Rigidbody since they need physics to be able to be hit and bounce. While the goal Is Trigger is checked since it doesn't need to move around. 
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
