@@ -22,7 +22,16 @@ Our time visualized everything as if we were building a surfboard. Our classes a
 I believe the color is changing rapidly because of the collision method. In which everytime it's hitting something it increases the RGB until it eventually turns super-saiyan!
 
 ### W4
-1. We determined that both the cat and ball need a Rigidbody since they need physics to be able to be hit and bounce. While the goal Is Trigger is checked since it doesn't need to move around. 
+1. We determined that both the cat and ball need a Rigidbody since they need physics to be able to be hit and bounce. While the goal Is Trigger is checked since it doesn't need to move around.
+
+### W7
+####Category assignment:
+1. https://docs.google.com/document/d/1XDWYyMudvxGwSmHYFAoLHSPJA9q0LByFpcUUr684WHo/edit?usp=sharing.
+2. Did collision, terrain, and NavMesh concepts along with outline simple C# coding.
+
+####Notes:
+1. 
+
 
 ## Open-Source Assets
 ### W1
