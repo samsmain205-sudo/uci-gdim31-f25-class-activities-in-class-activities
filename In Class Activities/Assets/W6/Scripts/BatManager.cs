@@ -14,7 +14,8 @@ public class BatManager : MonoBehaviour
     // In the Inspector, add ALL of the bats in the Scene.
     
     // STEP 1 -----------------------------------------------------------------
-
+    [SerializeField]private BatW6[] _bats;
+    [SerializeField]private string[] _messages;
     // STEP 3 -----------------------------------------------------------------
     // Add a member variable named "_messages" that's an array of strings.
     // In the Inspector, add at least a few different messages for the bats to
@@ -27,6 +28,7 @@ public class BatManager : MonoBehaviour
     // ------------------------------------------------------------------------
     private void Start()
     {
+
         // STEP 6 -------------------------------------------------------------
         // Uncomment and FIX the below line to initialize _newTextTimers as a
         //      float array with the same length as _bats.
@@ -38,7 +40,7 @@ public class BatManager : MonoBehaviour
         // That means the bat at _bats[0] has a timer at _newTextTimers[0],
         //      the bat at _bats[1] has a timer at _newTextTimers[1],
         //      and so on.
-        // _newTextTimers = new [_bats.Length];
+        _newTextTimers = new float[_bats.Length];
         // STEP 6 -------------------------------------------------------------
     }
 
@@ -48,18 +50,37 @@ public class BatManager : MonoBehaviour
         // STEP 7 -------------------------------------------------------------
         // Loop through all of the entries in _newTextTimers, and increase each
         //      timer's value by the amount of time that passed this frame.
-        
+        for (int i = 0; i < _newTextTimers.Length; i++){
+            _newTextTimers[i] += Time.deltaTime;
+        }
 
         // STEP 7 -------------------------------------------------------------
 
         // STEP 2 -------------------------------------------------------------
+
         // Write a for loop that visits all of the entires in the _bats array,
         //      and for each entry,
         //      check the distance between the bat and the player:
         //      IF the distance is less than _interactDistance, 
         //          make the bat chase the player;
         //          otherwise, make the bat STOP chasing the player.
-        //
+        for (int i = 0; i < _bats.Length; i++){
+            if(Vector3.Distance(_bats[i].transform.position, _playerTransform.position) <= _interactDistance)
+            {
+                _bats[i].startChase();
+            }
+            else 
+            {
+                _bats[i].stopChase();
+            }
+            if (Vector3.Distance(_bats[i].transform.position, _playerTransform.position) <= _overlapDistance)
+            {
+                CreateReactions(_bats[i]);
+            }
+        }
+    
+
+
         // You will need to check the Vector3 documentation to find a method
         //      to help you with that distance check :)
         // https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Vector3.html
@@ -87,6 +108,8 @@ public class BatManager : MonoBehaviour
         //
         // Use Random.Range() to pick a RANDOM INDEX in the _messages array
         //      and call SpawnReactionUI() with the string at that index.
+        int randomIndex = Random.Range(0, _messages.Length);
+        SpawnReactionUI(bat, _messages[randomIndex]);
         // This should choose a random message to spawn every time one of the
         //      bats reaches the player.
         //
@@ -107,7 +130,7 @@ public class BatManager : MonoBehaviour
         // /* starts the comments, and */ ends it.
         // Simply uncomment the below lines by removing the /* and */ to finish.
 
-        /*
+        
         int index = System.Array.IndexOf(_bats, bat);
         
         GridLayoutGroup layout = bat.GetComponentInChildren<GridLayoutGroup>();
@@ -117,7 +140,7 @@ public class BatManager : MonoBehaviour
             TMP_Text textObj = Instantiate(_reactionUiPrefab, layout.transform);
             textObj.text = message;
         }
-        */
+        
 
         // STEP 8 -------------------------------------------------------------
     }
